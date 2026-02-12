@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Untuk Sahabat Terbaikku 💙</title>
+
+<style>
+/* ===== BACKGROUND BIRU ELEGAN ===== */
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align:center;
+  color:white;
+  overflow-x:hidden;
+
+  background: linear-gradient(
+    135deg,
+    #0f1c3f,
+    #1f3b73,
+    #3a6fd8
+  );
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  padding:60px 20px;
+}
+
+/* ===== JUDUL ===== */
+h1{
+  font-size:40px;
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+
+/* ===== TYPEWRITER ===== */
+#typingText{
+  font-size:20px;
+  max-width:600px;
+  margin:auto;
+  min-height:80px;
+  line-height:1.6;
+}
+
+/* ===== BUTTON ===== */
+button{
+  background:white;
+  color:#1f3b73;
+  border:none;
+  padding:12px 28px;
+  border-radius:30px;
+  font-size:16px;
+  margin-top:25px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+}
+
+/* ===== KOTAK PESAN ===== */
+#secret, #surprise{
+  margin-top:30px;
+  font-size:18px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  display:none;
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:20px;
+  backdrop-filter: blur(8px);
+}
+
+/* ===== BINTANG ===== */
+.star{
+  position:fixed;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+  50%{opacity:0.2;}
+}
+
+/* ===== HUJAN KATA ===== */
+.word{
+  position:fixed;
+  top:-20px;
+  font-size:14px;
+  animation:fall 5s linear forwards;
+  color:#cfe3ff;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== MUSIK ===== -->
+<audio autoplay loop>
+  <source src="Kekal.mp3" type="audio/mpeg">
+  
+</audio>
+<audio id="bgmusic" loop>
+<source src="Kekal.mp3">
+</audio>
+
+<div class="container">
+  <h1>HAIIII SEANNN!!!</h1>
+
+  <h2 id="typingText"></h2>
+
+  <button onclick="showMessage()">Buka Pesan Rahasia ✨</button>
+
+  <div id="secret">
+   Haii seann, meskupun kita baru kenal beberapa hari bahkan cuma vitual, dan bahkan di aplikasi yang bisa di bilang rawan. Aku harap kamu tetap bisa maju yaa, maju dengan mimpi mimpi kamu yang keren dan indah itu, aku harap kamu bisa dapetin apa yang kamu mau gapai, apapun itu aku berharap kamu pasti bisa. SEMANGAT Yaaa seannn Masa depan yang indah lagi nunggu kamu di sana, dia nunggu kamu buat di samperin bahkan dia juga yakin kamu bisa lari ke arahnya.
+   “Jangan ragu sama diri sendiri.
+Kamu itu lebih kuat dari yang kamu kira, lebih hebat dari yang kamu lihat,
+dan lebih berharga dari yang kamu rasakan.
+Pelan-pelan aja, tapi jangan berhenti ya. Aku percaya kamu pasti bisa!”
+“Semangat ya… aku percaya kamu banget, serius.
+Aku tahu nggak semua hari itu mudah, kadang capek, kadang pengen nyerah, kadang ngerasa sendirian. Tapi kamu harus ingat satu hal — kamu nggak pernah sendirian. kalo kamu butuh tempat cerita, kamu boleh cerita ke aku.
+Pelan-pelan aja jalannya, nggak usah buru-buru. Nggak apa-apa kalau istirahat, yang penting jangan berhenti. Kamu itu lebih kuat dari yang kamu kira, dan aku bangga banget sama kamu sejauh ini.
+Apa pun yang terjadi, aku tetap di sisi kamu. Jadi jangan takut.”
+
+  </div>
+
+  <div id="surprise">
+    Haii seann ini website buat kamu hehe, maaf kalo website nya ngga sebagus yang kamu bayagkan, tapi semoga kamu suka sama website nya ya!!!
+</div>
+
+<script>
+/* ===== TYPEWRITER ===== */
+const text = "Di antara banyak orang yang datang dan pergi, kamu tetap tinggal. Dan aku bangga kamu udah lewati hal berat dengan ikhlas. Kamu hebat lebih hebat dari apapun, bahkan secape apapun kamu, kamu tetep kuat dan bertahan.";
+let i=0;
+
+function typeWriter(){
+  if(i<text.length){
+    document.getElementById("typingText").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeWriter,45);
+  }
+}
+typeWriter();
+
+/* ===== PESAN RAHASIA ===== */
+function showMessage(){
+  document.getElementById("secret").style.display="block";
+}
+
+/* ===== SURPRISE OTOMATIS ===== */
+setTimeout(()=>{
+  document.getElementById("surprise").style.display="block";
+},10000);
+
+/* ===== BINTANG ===== */
+for(let i=0;i<80;i++){
+  const star=document.createElement("div");
+  star.className="star";
+  star.style.left=Math.random()*100+"vw";
+  star.style.top=Math.random()*100+"vh";
+  star.style.animationDelay=Math.random()*2+"s";
+  document.body.appendChild(star);
+}
+
+/* ===== HUJAN KATA ===== */
+const words=["SEMANGAT","KAMU KUAT","PROUD OF YOU","JANGAN NYERAH","SEAN HEBAT"];
+
+setInterval(()=>{
+  const span=document.createElement("span");
+  span.className="word";
+  span.innerText=words[Math.floor(Math.random()*words.length)];
+  span.style.left=Math.random()*100+"vw";
+  document.body.appendChild(span);
+
+  setTimeout(()=>span.remove(),5000);
+},800);
+/* ======= MUSIC ======= */
+document.body.addEventListener("click",()=>{
+    document.getElementById("bgmusic").play();
+},{once:true});
+</script>
+
+
+</body>
+</html>
